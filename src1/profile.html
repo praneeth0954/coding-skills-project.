@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>🎓 Student Portal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="backlogs.html">Backlogs</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>My Profile</h1>
+                <p class="subtitle">Manage your personal information</p>
+            </header>
+
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <span id="avatarInitial">S</span>
+                        </div>
+                        <button class="btn btn-secondary" id="editProfileBtn">Edit Profile</button>
+                    </div>
+
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" name="studentId" readonly>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="course">Course</label>
+                                <input type="text" id="course" name="course" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="semester">Semester</label>
+                                <input type="number" id="semester" name="semester" min="1" max="8" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="saveProfileBtn" style="display: none;">Save Changes</button>
+                            <button type="button" class="btn btn-secondary" id="cancelEditBtn" style="display: none;">Cancel</button>
+                            <button type="button" class="btn btn-accent" id="raiseTicketBtn">Raise Ticket for Correction</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
+

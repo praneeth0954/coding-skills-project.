@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backlogs - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>🎓 Student Portal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="backlogs.html" class="active">Backlogs</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Backlogs</h1>
+                <p class="subtitle">Track your pending subjects</p>
+            </header>
+
+            <div class="backlogs-container">
+                <div class="backlog-summary">
+                    <div class="summary-card">
+                        <h3>Total Backlogs</h3>
+                        <p class="summary-value" id="totalBacklogs">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Cleared</h3>
+                        <p class="summary-value" id="clearedBacklogs">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Pending</h3>
+                        <p class="summary-value" id="pendingBacklogs">0</p>
+                    </div>
+                </div>
+
+                <div class="backlog-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="cleared">Cleared</button>
+                </div>
+
+                <div class="backlog-list" id="backlogList">
+                    <div class="empty-state">
+                        <p>🎉 No backlogs! Great job!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="backlogs.js"></script>
+</body>
+</html>
+

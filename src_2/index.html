@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Chain - Linked List Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Task Chain</h1>
+            <p class="subtitle">Linked List Data Structure Simulator</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Enter task name..." maxlength="30">
+                    <div class="add-options">
+                        <button id="addBtn" class="btn btn-primary">Add Task (at End)</button>
+                        <button id="addAtPriorityBtn" class="btn btn-primary">Add at Priority</button>
+                    </div>
+                    <div class="priority-insert-group" id="priorityInsertGroup" style="display: none;">
+                        <input type="number" id="insertPriorityInput" placeholder="Enter priority number..." min="1">
+                        <button id="confirmInsertBtn" class="btn btn-success">Insert</button>
+                        <button id="cancelInsertBtn" class="btn btn-secondary">Cancel</button>
+                    </div>
+                    <p class="priority-info">Priority auto-increments at end, or specify priority to insert</p>
+                </div>
+
+                <div class="operation-buttons">
+                    <button id="removeBtn" class="btn btn-secondary">Complete First Task</button>
+                    <button id="clearBtn" class="btn btn-danger">Clear All</button>
+                    <button id="searchBtn" class="btn btn-info">Search Task</button>
+                </div>
+
+                <div class="delete-by-priority">
+                    <h3>Delete by Priority</h3>
+                    <div class="delete-input-group">
+                        <input type="number" id="deletePriorityInput" placeholder="Enter priority to delete..." min="1">
+                        <button id="deleteByPriorityBtn" class="btn btn-danger">Delete Task</button>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Tasks:</span>
+                        <span id="totalTasks" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Operations:</span>
+                        <span id="operationCount" class="stat-value">0</span>
+                        <span class="stat-hint" title="Counts: Add, Remove, Search, Clear operations">ℹ️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-area">
+                <h2>Linked List Visualization</h2>
+                <div id="linkedListDisplay" class="linked-list-display">
+                    <div class="empty-state">
+                        <p>No tasks yet. Add your first task to start!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-list-panel">
+                <h2>Task List (Traversal Order)</h2>
+                <div id="taskList" class="task-list">
+                    <p class="empty-message">No tasks in the list</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>About Linked Lists</h3>
+            <ul>
+                <li><strong>Node:</strong> Each task is a node containing data and a pointer</li>
+                <li><strong>Head:</strong> The first task in the chain</li>
+                <li><strong>Traversal:</strong> Follow pointers from head to tail</li>
+                <li><strong>Operations:</strong> O(1) insertion/deletion at head, O(n) for search</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Search Task</h2>
+            <input type="text" id="searchInput" placeholder="Enter task name to search...">
+            <button id="performSearchBtn" class="btn btn-primary">Search</button>
+            <div id="searchResult" class="search-result"></div>
+        </div>
+    </div>
+
+    <script src="linkedList.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+

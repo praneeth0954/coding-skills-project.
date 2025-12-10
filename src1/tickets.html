@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>🎓 Student Portal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="backlogs.html">Backlogs</a></li>
+                <li><a href="tickets.html" class="active">Tickets</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Support Tickets</h1>
+                <p class="subtitle">Raise tickets for corrections and issues</p>
+            </header>
+
+            <div class="tickets-container">
+                <div class="ticket-actions">
+                    <button class="btn btn-primary" id="raiseTicketBtn">Raise New Ticket</button>
+                    <div class="ticket-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="resolved">Resolved</button>
+                        <button class="filter-btn" data-filter="closed">Closed</button>
+                    </div>
+                </div>
+
+                <div class="tickets-list" id="ticketsList">
+                    <div class="empty-state">
+                        <p>No tickets yet. Raise a ticket if you need any corrections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Raise Ticket Modal -->
+    <div id="raiseTicketModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="ticketModalTitle">Raise New Ticket</h2>
+            <form id="ticketForm">
+                <input type="hidden" id="editingTicketId" value="">
+                <div class="form-group">
+                    <label for="ticketType">Ticket Type</label>
+                    <select id="ticketType" required>
+                        <option value="">Select Type</option>
+                        <option value="marks">Marks Correction</option>
+                        <option value="profile">Profile Correction</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group" id="subjectGroup" style="display: none;">
+                    <label for="ticketSubject">Subject (for marks correction)</label>
+                    <select id="ticketSubject">
+                        <option value="">Select Subject</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ticketTitle">Title</label>
+                    <input type="text" id="ticketTitle" placeholder="Brief description of the issue" required>
+                </div>
+                <div class="form-group">
+                    <label for="ticketDescription">Description</label>
+                    <textarea id="ticketDescription" rows="5" placeholder="Provide detailed information about the issue..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="ticketPriority">Priority</label>
+                    <select id="ticketPriority" required>
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Ticket</button>
+                    <button type="button" class="btn btn-secondary" id="cancelTicket">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="tickets.js"></script>
+</body>
+</html>
+

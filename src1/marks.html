@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks & CGPA - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>🎓 Student Portal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="marks.html" class="active">Marks</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="backlogs.html">Backlogs</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Marks & CGPA</h1>
+                <p class="subtitle">Track your academic performance</p>
+            </header>
+
+            <div class="marks-container">
+                <!-- CGPA Overview -->
+                <div class="cgpa-card">
+                    <h2>CGPA Overview</h2>
+                    <div class="cgpa-display">
+                        <div class="cgpa-circle">
+                            <span class="cgpa-value" id="overallCGPA">0.00</span>
+                            <span class="cgpa-label">CGPA</span>
+                        </div>
+                        <div class="cgpa-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Total Credits:</span>
+                                <span class="detail-value" id="totalCredits">0</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Completed Credits:</span>
+                                <span class="detail-value" id="completedCredits">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semester Selector -->
+                <div class="semester-selector">
+                    <label for="semesterSelect">Select Semester:</label>
+                    <select id="semesterSelect" class="select-input">
+                        <option value="all">All Semesters</option>
+                    </select>
+                </div>
+
+                <!-- Subjects Table -->
+                <div class="table-container">
+                    <table class="marks-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Credits</th>
+                                <th>Internal Marks</th>
+                                <th>Grade</th>
+                                <th>Grade Points</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="marksTableBody">
+                            <tr>
+                                <td colspan="8" class="empty-state">No marks data available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Subject Button -->
+                <div class="action-section">
+                    <button class="btn btn-primary" id="addSubjectBtn">Add Subject</button>
+                    <button class="btn btn-accent" id="raiseMarksTicketBtn">Raise Ticket for Marks Correction</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Subject Modal -->
+    <div id="addSubjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Subject</h2>
+            <form id="addSubjectForm">
+                <div class="form-group">
+                    <label for="subjectCode">Subject Code</label>
+                    <input type="text" id="subjectCode" required>
+                </div>
+                <div class="form-group">
+                    <label for="subjectName">Subject Name</label>
+                    <input type="text" id="subjectName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subjectCredits">Credits</label>
+                        <input type="number" id="subjectCredits" min="1" max="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subjectSemester">Semester</label>
+                        <input type="number" id="subjectSemester" min="1" max="8" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="internalMarks">Internal Marks</label>
+                        <input type="number" id="internalMarks" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade">Grade</label>
+                        <select id="grade" required>
+                            <option value="">Select Grade</option>
+                            <option value="S">S (10)</option>
+                            <option value="A">A (9)</option>
+                            <option value="B">B (8)</option>
+                            <option value="C">C (7)</option>
+                            <option value="D">D (6)</option>
+                            <option value="E">E (5)</option>
+                            <option value="F">F (0) - Fail</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Add Subject</button>
+                    <button type="button" class="btn btn-secondary" id="cancelAddSubject">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="marks.js"></script>
+</body>
+</html>
+

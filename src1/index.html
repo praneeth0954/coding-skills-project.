@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>🎓 Student Portal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="marks.html">Marks</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="backlogs.html">Backlogs</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Welcome Back, <span id="studentName">Student</span>!</h1>
+                <p class="subtitle">Track your academic progress and manage your studies</p>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Quick Stats Cards -->
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <h3>Current CGPA</h3>
+                        <p class="stat-value" id="currentCGPA">0.00</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-info">
+                        <h3>Internal Marks</h3>
+                        <p class="stat-value" id="avgInternal">0%</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-info">
+                        <h3>Backlogs</h3>
+                        <p class="stat-value" id="backlogCount">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎫</div>
+                    <div class="stat-info">
+                        <h3>Active Tickets</h3>
+                        <p class="stat-value" id="activeTickets">0</p>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="action-card">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <a href="marks.html" class="btn btn-primary">View Marks</a>
+                        <a href="timetable.html" class="btn btn-secondary">Check Timetable</a>
+                        <a href="tickets.html" class="btn btn-accent">Raise Ticket</a>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-card">
+                    <h3>Recent Activity</h3>
+                    <div id="recentActivity" class="activity-list">
+                        <p class="empty-state">No recent activity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
+
